@@ -1,0 +1,618 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Initialize Nuxt 3 Project with TypeScript and Tailwind CSS",
+      "description": "Set up the Nuxt 3 project scaffold with TypeScript, Tailwind CSS, and essential dev tooling. Configure nuxt.config.ts, tsconfig, and project structure with pages/, components/, composables/, server/, and assets/ directories.",
+      "status": "done",
+      "priority": "high",
+      "dependencies": [],
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Create Nuxt 3 project with nuxi init",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 2,
+          "title": "Install and configure Tailwind CSS v3+",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 3,
+          "title": "Set up TypeScript strict mode in tsconfig",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 4,
+          "title": "Create directory structure: pages/, components/, composables/, server/api/, assets/",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 5,
+          "title": "Configure nuxt.config.ts with SSR, i18n-ready, and meta defaults",
+          "status": "pending",
+          "parentId": "undefined"
+        }
+      ],
+      "details": "Foundation task. Use `npx nuxi@latest init digital-pr-site`. Add @nuxtjs/tailwindcss module. Set default lang to 'sv'. Configure base meta tags for Swedish SEO.",
+      "updatedAt": "2026-03-17T14:58:17.703Z"
+    },
+    {
+      "id": "2",
+      "title": "Define TypeScript Data Models and Calculation Types",
+      "description": "Create TypeScript interfaces for LoanInput, CalculationResult, and ComparisonData. Define types used across the calculator, results, and API routes.",
+      "status": "done",
+      "priority": "high",
+      "dependencies": [
+        "1"
+      ],
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Create types/loan.ts with LoanInput interface",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 2,
+          "title": "Create types/result.ts with CalculationResult interface",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 3,
+          "title": "Create types/comparison.ts with ComparisonData interface (SCB/FI averages)",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 4,
+          "title": "Create types/email.ts with EmailCapture interface",
+          "status": "pending",
+          "parentId": "undefined"
+        }
+      ],
+      "details": "LoanInput: amount (SEK), interestRate (%), monthlyPayment (SEK). CalculationResult: id, loans[], totalDebt, currentMonthlyCost, currentTotalInterest, consolidatedRate, consolidatedMonthly, monthlySavings, totalSavings, comparisonData, createdAt. ComparisonData: avgHouseholdDebt, avgInterestRate, avgNumLoans from SCB/FI.",
+      "updatedAt": "2026-03-17T15:12:53.178Z"
+    },
+    {
+      "id": "3",
+      "title": "Build Landing Page with Hero Section and CTA",
+      "description": "Create the landing page (/) with Swedish headline 'Hur mycket kan du spara genom att samla dina lån?', brief explanation, prominent 'Börja räkna' CTA button, below-fold preview of results, and trust signals citing data sources.",
+      "status": "done",
+      "priority": "high",
+      "dependencies": [
+        "1"
+      ],
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Create pages/index.vue with hero section layout",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 2,
+          "title": "Add headline, subtext (2-3 sentences), and CTA button linking to /kalkylator",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 3,
+          "title": "Build below-fold section with results preview mockup",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 4,
+          "title": "Add trust signals bar: 'Baserat på data från SCB, Finansinspektionen och Riksbanken'",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 5,
+          "title": "Add key stats teaser (e.g., average unnecessary interest costs)",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 6,
+          "title": "Ensure mobile-first responsive design",
+          "status": "pending",
+          "parentId": "undefined"
+        }
+      ],
+      "details": "All text in Swedish. Design should be clean, trustworthy (blues/greens to complement trygga.com). Mobile-first since primary sharing happens on phones.",
+      "updatedAt": "2026-03-17T15:14:14.287Z"
+    },
+    {
+      "id": "4",
+      "title": "Build Loan Input Form Component",
+      "description": "Create the calculator input form allowing users to add 1-5 loans, each with amount (kr), interest rate (%), and monthly payment (kr). Include Swedish number formatting, validation, and add/remove loan functionality.",
+      "status": "done",
+      "priority": "high",
+      "dependencies": [
+        "1",
+        "2"
+      ],
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Create components/LoanForm.vue with reactive loan array state",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 2,
+          "title": "Build LoanCard.vue component for individual loan inputs",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 3,
+          "title": "Implement Swedish number formatting (space as thousand separator, comma as decimal)",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 4,
+          "title": "Add client-side validation with Swedish error messages",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 5,
+          "title": "Add 'Lägg till ett till lån' button (max 5 loans) and remove loan functionality",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 6,
+          "title": "Add placeholder example values for guidance",
+          "status": "pending",
+          "parentId": "undefined"
+        }
+      ],
+      "details": "Use Vue 3 Composition API with reactive(). Format inputs with Swedish locale. Validate: amount > 0, rate 0-100%, monthly > 0. Show inline validation errors in Swedish.",
+      "updatedAt": "2026-03-17T15:12:59.669Z"
+    },
+    {
+      "id": "5",
+      "title": "Implement Client-Side Savings Calculation Engine",
+      "description": "Build the core calculation logic as a composable that computes consolidated loan savings. Compares current total costs vs estimated consolidated loan, calculates monthly and total savings over the remaining term.",
+      "status": "done",
+      "priority": "high",
+      "dependencies": [
+        "2"
+      ],
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Create composables/useCalculator.ts with calculation logic",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 2,
+          "title": "Calculate total current monthly cost and total interest paid",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 3,
+          "title": "Estimate consolidated interest rate based on market data/assumptions",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 4,
+          "title": "Calculate consolidated monthly payment using amortization formula",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 5,
+          "title": "Compute monthly savings and total savings over loan term",
+          "status": "pending",
+          "parentId": "undefined"
+        }
+      ],
+      "details": "All calculations run client-side, no server round-trip. Use standard amortization formula. Consolidated rate can be estimated as weighted average minus a reasonable discount (e.g., 1-2 percentage points). Return a full CalculationResult object.",
+      "updatedAt": "2026-03-17T15:13:05.489Z"
+    },
+    {
+      "id": "6",
+      "title": "Hardcode Swedish National Average Data from SCB/FI/Riksbanken",
+      "description": "Research and hardcode real public data from SCB, Finansinspektionen, and Riksbanken for national average comparisons. Include average household debt, average consumer loan interest rates, average number of loans, and policy rate.",
+      "status": "done",
+      "priority": "medium",
+      "dependencies": [
+        "2"
+      ],
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Research current SCB data on average Swedish household debt levels",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 2,
+          "title": "Research Finansinspektionen data on average consumer loan interest rates",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 3,
+          "title": "Get Riksbanken policy rate for context",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 4,
+          "title": "Create data/swedenAverages.ts with sourced, cited data constants",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 5,
+          "title": "Add source URLs and date-of-retrieval comments for each data point",
+          "status": "pending",
+          "parentId": "undefined"
+        }
+      ],
+      "details": "Data must be real and citable. Include source URLs as comments. This data powers the comparison charts and trust signals. Format: { avgHouseholdDebt, avgInterestRate, avgNumLoans, policyRate, sources[] }.",
+      "updatedAt": "2026-03-17T15:13:11.215Z"
+    },
+    {
+      "id": "7",
+      "title": "Build Results Display with Charts and Comparison Visualization",
+      "description": "Create the results view showing savings metrics, interactive bar chart comparing user costs vs consolidated costs, and comparison against Swedish national averages. Include animated transition from input to results.",
+      "status": "done",
+      "priority": "high",
+      "dependencies": [
+        "4",
+        "5",
+        "6"
+      ],
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Create components/ResultsDisplay.vue with key metrics (monthly savings, total savings)",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 2,
+          "title": "Install and configure Chart.js with vue-chartjs",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 3,
+          "title": "Build comparison bar chart: current costs vs consolidated costs",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 4,
+          "title": "Build national average comparison chart: user vs Swedish averages",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 5,
+          "title": "Create per-loan breakdown table",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 6,
+          "title": "Add animated transition from form to results view",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 7,
+          "title": "Add CTA buttons: 'Jämför lån på Trygga.com' and 'Dela ditt resultat'",
+          "status": "pending",
+          "parentId": "undefined"
+        }
+      ],
+      "details": "Use Chart.js for bar charts with Swedish labels. Highlight monthly savings prominently. Animate numbers counting up. All text in Swedish. Link 'Jämför lån' to trygga.com loan comparison flow.",
+      "updatedAt": "2026-03-17T15:19:15.796Z"
+    },
+    {
+      "id": "8",
+      "title": "Create Calculator Page Integrating Form and Results",
+      "description": "Build the /kalkylator page that combines the loan input form and results display into a seamless single-page experience with no page reload between steps.",
+      "status": "done",
+      "priority": "high",
+      "dependencies": [
+        "4",
+        "7"
+      ],
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Create pages/kalkylator.vue integrating LoanForm and ResultsDisplay",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 2,
+          "title": "Manage step state (input vs results) with smooth transitions",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 3,
+          "title": "Add 'Räkna om' (Recalculate) button to go back to form with data preserved",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 4,
+          "title": "Add page-level SEO meta tags for /kalkylator",
+          "status": "pending",
+          "parentId": "undefined"
+        }
+      ],
+      "details": "Single-page experience. Step 1 = loan input form, Step 2 = results. No page reload. Preserve form data when going back. Use Vue transitions for smooth step changes.",
+      "updatedAt": "2026-03-17T15:13:18.029Z"
+    },
+    {
+      "id": "9",
+      "title": "Build Server API for Result Persistence",
+      "description": "Create Nuxt server API routes to save calculation results with a unique ID and retrieve them for the shareable results page. Use simple JSON file storage or SQLite.",
+      "status": "done",
+      "priority": "medium",
+      "dependencies": [
+        "2",
+        "5"
+      ],
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Create server/api/results.post.ts to save results and return unique ID",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 2,
+          "title": "Create server/api/results/[id].get.ts to retrieve saved results",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 3,
+          "title": "Implement unique ID generation (nanoid or UUID)",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 4,
+          "title": "Set up simple storage (JSON file or SQLite via better-sqlite3)",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 5,
+          "title": "Add input validation and error handling on API routes",
+          "status": "pending",
+          "parentId": "undefined"
+        }
+      ],
+      "details": "Keep it simple — JSON file storage is fine for modest traffic. Generate short, URL-friendly IDs with nanoid. Validate incoming data matches CalculationResult shape.",
+      "updatedAt": "2026-03-17T15:19:22.865Z"
+    },
+    {
+      "id": "10",
+      "title": "Build Shareable Results Page with OG Image Generation",
+      "description": "Create the /resultat/:id page that server-renders saved results with auto-generated Open Graph images containing key savings numbers for social sharing.",
+      "status": "done",
+      "priority": "medium",
+      "dependencies": [
+        "7",
+        "9"
+      ],
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Create pages/resultat/[id].vue with server-side data fetching",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 2,
+          "title": "Render results in read-only view reusing ResultsDisplay component",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 3,
+          "title": "Build OG image generation endpoint using Satori + sharp",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 4,
+          "title": "Create OG image template showing monthly savings and total savings",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 5,
+          "title": "Add dynamic meta tags (OG, Twitter Card) with generated image URL",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 6,
+          "title": "Add CTAs: 'Jämför lån på Trygga.com' and 'Räkna på dina egna lån'",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 7,
+          "title": "Add social share buttons (Facebook, Twitter/X, LinkedIn) with copy-to-clipboard",
+          "status": "pending",
+          "parentId": "undefined"
+        }
+      ],
+      "details": "Use useAsyncData() for SSR data fetching. OG image should be visually appealing with key numbers. Use Satori to render HTML/CSS to SVG, then sharp to convert to PNG. Serve at /api/og/:id.png.",
+      "updatedAt": "2026-03-17T15:19:28.937Z"
+    },
+    {
+      "id": "11",
+      "title": "Implement Email Capture with GDPR Compliance",
+      "description": "Add optional email capture on the results page allowing users to receive their report by email. Include GDPR-compliant consent checkbox and server-side email storage.",
+      "status": "done",
+      "priority": "low",
+      "dependencies": [
+        "9",
+        "10"
+      ],
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Create components/EmailCapture.vue with email input and GDPR consent checkbox",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 2,
+          "title": "Create server/api/email.post.ts to store email + result ID",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 3,
+          "title": "Add Swedish-language consent text and privacy notice",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 4,
+          "title": "Add success/error feedback UI",
+          "status": "pending",
+          "parentId": "undefined"
+        }
+      ],
+      "details": "Non-gating — purely optional. Consent text: 'Jag godkänner att mina uppgifter sparas enligt GDPR'. Store: email, resultId, consentTimestamp, consentText.",
+      "updatedAt": "2026-03-17T15:23:38.605Z"
+    },
+    {
+      "id": "12",
+      "title": "Add SEO Metadata, Structured Data, and Open Graph Tags",
+      "description": "Implement comprehensive SEO optimization across all pages including Swedish meta tags, JSON-LD structured data for the calculator tool, and Open Graph tags for social sharing.",
+      "status": "done",
+      "priority": "medium",
+      "dependencies": [
+        "3",
+        "8",
+        "10"
+      ],
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Configure global SEO defaults in nuxt.config.ts (title template, description, lang='sv')",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 2,
+          "title": "Add page-specific meta tags using useHead() on each page",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 3,
+          "title": "Create JSON-LD structured data (WebApplication schema) for the calculator",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 4,
+          "title": "Add Open Graph and Twitter Card meta tags on all pages",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 5,
+          "title": "Add canonical URLs and sitemap generation",
+          "status": "pending",
+          "parentId": "undefined"
+        }
+      ],
+      "details": "All meta content in Swedish. Use @nuxtjs/seo or manual useHead(). JSON-LD type: WebApplication with name, description, url, applicationCategory: 'FinanceApplication'. Generate sitemap.xml.",
+      "updatedAt": "2026-03-17T15:23:48.978Z"
+    },
+    {
+      "id": "13",
+      "title": "Visual Polish, Animations, and Responsive Design QA",
+      "description": "Final visual polish including transition animations, responsive design testing across devices, cross-browser testing, and performance optimization. Ensure the design complements trygga.com branding.",
+      "status": "done",
+      "priority": "medium",
+      "dependencies": [
+        "3",
+        "8",
+        "10"
+      ],
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Add page transition animations and micro-interactions",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 2,
+          "title": "Test and fix responsive layout on mobile, tablet, desktop",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 3,
+          "title": "Cross-browser testing (Chrome, Firefox, Safari, Edge)",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 4,
+          "title": "Optimize Lighthouse scores (Performance, Accessibility, SEO)",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 5,
+          "title": "Verify WCAG 2.1 AA accessibility compliance",
+          "status": "pending",
+          "parentId": "undefined"
+        },
+        {
+          "id": 6,
+          "title": "Finalize color scheme and typography to complement trygga.com",
+          "status": "pending",
+          "parentId": "undefined"
+        }
+      ],
+      "details": "Mobile-first priority since sharing happens on phones. Target Lighthouse scores: Performance 90+, Accessibility 95+, SEO 95+. Use Inter or similar clean sans-serif font. Colors: trustworthy blues/greens.",
+      "updatedAt": "2026-03-17T15:23:59.169Z"
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "lastModified": "2026-03-17T15:23:59.170Z",
+    "taskCount": 13,
+    "completedCount": 13,
+    "tags": [
+      "master"
+    ]
+  }
+}
