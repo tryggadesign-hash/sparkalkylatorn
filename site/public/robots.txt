@@ -1,2 +1,9 @@
-User-Agent: *
-Disallow:
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Sitemaps
+Sitemap: https://sparkalkylatorn.trygga.com/sitemap.xml
+
+# Crawl-delay for well-behaved bots
+Crawl-delay: 10

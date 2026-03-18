@@ -35,31 +35,33 @@ async function submit() {
     </div>
 
     <template v-else>
-      <div class="flex gap-3">
+      <div class="flex flex-col gap-3 sm:flex-row">
         <input
           v-model="email"
           type="email"
+          inputmode="email"
+          autocomplete="email"
           placeholder="din@email.se"
-          class="nordic-card border px-4 py-3 text-sm flex-1 max-w-[420px] outline-none focus:border-[#3870a5]"
-          style="border-color: #32506e; color: #acc8e6; background-color: #12243e"
+          class="nordic-card border px-4 py-4 text-sm w-full sm:flex-1 sm:max-w-[420px] outline-none focus:border-[#3870a5] min-h-[52px]"
+          style="border-color: #32506e; color: #acc8e6; background-color: #12243e; font-size: 16px"
         />
         <button
           :disabled="!email || !consent || status === 'sending'"
-          class="btn-growth px-6 py-3 text-sm disabled:opacity-40 disabled:cursor-not-allowed"
+          class="btn-growth px-6 py-4 text-sm w-full sm:w-auto disabled:opacity-40 disabled:cursor-not-allowed min-h-[52px]"
           @click="submit"
         >
           {{ status === 'sending' ? 'Skickar...' : 'Skicka →' }}
         </button>
       </div>
 
-      <label class="mt-3 flex items-start gap-2 cursor-pointer">
+      <label class="mt-3 flex items-start gap-3 cursor-pointer">
         <input
           v-model="consent"
           type="checkbox"
-          class="mt-1 rounded"
+          class="mt-0.5 rounded shrink-0 h-5 w-5"
           style="accent-color: #22c55e"
         />
-        <span class="text-xs" style="color: #506580">
+        <span class="text-xs leading-relaxed" style="color: #506580">
           Jag godkänner att mina uppgifter sparas enligt GDPR.
           <a href="#" class="underline">Integritetspolicy →</a>
         </span>

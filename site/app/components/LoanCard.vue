@@ -40,12 +40,12 @@ function onMonthlyInput(e: Event) {
 </script>
 
 <template>
-  <div class="nordic-card p-6 transition-all">
+  <div class="nordic-card p-5 sm:p-6 transition-all">
     <div class="flex items-center justify-between mb-3">
       <p class="nordic-label">Lån {{ String(index + 1).padStart(2, '0') }}</p>
       <button
         v-if="canRemove"
-        class="text-xs px-2 py-1 rounded transition-colors"
+        class="text-xs px-3 py-2 rounded-lg transition-colors min-h-[36px] min-w-[60px]"
         style="color: #7890a8; background-color: #1a3050"
         @click="emit('remove')"
       >
@@ -54,17 +54,18 @@ function onMonthlyInput(e: Event) {
     </div>
     <div class="h-px w-full mb-5" style="background-color: #243a5c" />
 
-    <div class="grid grid-cols-1 gap-5 sm:grid-cols-3">
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5">
       <!-- Amount -->
       <div>
         <label class="nordic-label block mb-2" style="font-size: 11px">Belopp (kr)</label>
         <input
           type="text"
           inputmode="numeric"
+          autocomplete="off"
           :placeholder="'125 000'"
           :value="loan.amount ? formatNumber(loan.amount) : ''"
-          class="w-full rounded-lg border px-4 py-3 text-lg font-bold outline-none transition-colors focus:border-[#3870a5]"
-          style="background-color: #0f1a30; border-color: #243a5c; color: #f0f5fa"
+          class="w-full rounded-lg border px-4 py-4 text-base sm:text-lg font-bold outline-none transition-colors focus:border-[#3870a5] min-h-[52px]"
+          style="background-color: #0f1a30; border-color: #243a5c; color: #f0f5fa; font-size: 16px"
           @input="onAmountInput"
         />
       </div>
@@ -75,10 +76,11 @@ function onMonthlyInput(e: Event) {
         <input
           type="text"
           inputmode="decimal"
+          autocomplete="off"
           placeholder="8.9"
           :value="loan.interestRate || ''"
-          class="w-full rounded-lg border px-4 py-3 text-lg font-bold outline-none transition-colors focus:border-[#3870a5]"
-          style="background-color: #0f1a30; border-color: #243a5c; color: #acc8e6"
+          class="w-full rounded-lg border px-4 py-4 text-base sm:text-lg font-bold outline-none transition-colors focus:border-[#3870a5] min-h-[52px]"
+          style="background-color: #0f1a30; border-color: #243a5c; color: #acc8e6; font-size: 16px"
           @input="onRateInput"
         />
       </div>
@@ -89,10 +91,11 @@ function onMonthlyInput(e: Event) {
         <input
           type="text"
           inputmode="numeric"
+          autocomplete="off"
           :placeholder="'2 340'"
           :value="loan.monthlyPayment ? formatNumber(loan.monthlyPayment) : ''"
-          class="w-full rounded-lg border px-4 py-3 text-lg font-bold outline-none transition-colors focus:border-[#3870a5]"
-          style="background-color: #0f1a30; border-color: #243a5c; color: #f0f5fa"
+          class="w-full rounded-lg border px-4 py-4 text-base sm:text-lg font-bold outline-none transition-colors focus:border-[#3870a5] min-h-[52px]"
+          style="background-color: #0f1a30; border-color: #243a5c; color: #f0f5fa; font-size: 16px"
           @input="onMonthlyInput"
         />
       </div>
