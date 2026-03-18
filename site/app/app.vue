@@ -1,5 +1,6 @@
 <template>
   <div class="min-h-screen" style="background-color: #0c1426">
+    <Navbar />
     <NuxtRouteAnnouncer />
     <NuxtPage :transition="{ name: 'page', mode: 'out-in' }" />
   </div>
